@@ -1123,6 +1123,12 @@ header .unify-brand:hover {
   font-weight: 700;
   opacity: 40%;
 }
+.landing-table-minus img {
+  display: block;
+  width: 1.2500vw;
+  height: auto;
+  background-size: cover;
+}
 
 /* --------------------------------------------------------------------------
    HOMEPAGE SECTION 11: TODAY CTA
