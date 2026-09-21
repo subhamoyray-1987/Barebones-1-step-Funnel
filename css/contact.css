@@ -144,7 +144,8 @@
   color: var(--text-primary);
 }
 
-.sidebar-svg-icon {
+.sidebar-svg-icon,
+.info-icon-box img {
   display: block;
 }
 
@@ -443,8 +444,8 @@
   }
   .sidebar-svg-icon {
     width: 1.5625vw;
-    height: 1.5625vw;
-    margin-top: 0.1563vw; /* 2px */
+    height: auto;
+    background-size: cover;
   }
   .info-text-label {
     font-size: 1.0938vw;
@@ -663,8 +664,8 @@
   }
 
   .sidebar-svg-icon {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: auto;
   }
 
   .info-text-label {
@@ -843,7 +844,8 @@
 
   .sidebar-svg-icon {
     width: 20px;
-    height: 20px;
+    height: auto;
+    background-size: cover;
   }
 
   .info-text-label {

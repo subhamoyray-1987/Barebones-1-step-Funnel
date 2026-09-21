@@ -517,6 +517,11 @@
     line-height: 14px;  
     border-color: #C4C7C7;  
   }
+  .landing-table-minus img {
+    width: 16px;
+    height: auto;
+    background-size: cover;
+  }
   
   .landing-table svg,
   .landing-table-highlight img {
