@@ -1,0 +1,731 @@
+
+/* ==========================================================================
+   UNIFY CMS V6 - MOBILE & TABLET RESPONSIVE STYLES
+   Mobile Artboard Baseline: 375px (Fluid VW & Ergonomic Pixels)
+   ========================================================================== *
+
+   /* Tablet Optimization (768px - 1023.98px) */
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .landing-container {
+    width: 90% !important;
+  }
+  .landing-top-bar {
+    padding: 10px 0;
+    min-height: 40px;
+  }
+  .landing-top-bar-marquee {
+    width: 90%;
+  }
+  .landing-top-bar-content {
+    gap: 8px;
+  }
+  .landing-top-bar-content.marquee-clone {
+    display: none;
+  }
+  .top-bar-icon {
+    width: 16px;
+    height: 16px;
+  }
+  .landing-top-bar span {
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+  }
+  .landing-header {
+    height: 70px;
+  }
+  header .unify-brand {
+    width: 146px;
+    height: 28px;
+  }
+  .landing-nav {
+    gap: 20px;
+  }
+  .nav-link-unify {
+    font-size: 13px;
+  }
+  .landing-btn-buy {
+    width: 120px;
+    height: 36px;
+    font-size: 13px;
+  }
+  .landing-hero-title {
+    font-size: 36px;
+    line-height: 42px;
+  }
+  .landing-hero-features li {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .hero-check-icon {
+    width: 18px;
+    height: 18px;
+  }
+  .landing-btn-primary {
+    font-size: 18px;
+    min-height: 60px;
+  }
+  .landing-section-title {
+    font-size: 28px;
+    line-height: 34px;
+    margin-bottom: 32px;
+  }
+  .landing-section-subtitle {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 90%;
+  }
+  .landing-features-grid,
+  .landing-process-grid,
+  .landing-feedback-grid {
+    row-gap: 24px;
+  }
+  .landing-feature-card {
+    padding: 24px;
+  }
+  .landing-feature-icon-wrap {
+    width: 28px;
+    height: 28px;
+  }
+  .landing-feature-title {
+    font-size: 16px;
+  }
+  .landing-feature-desc {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .landing-img-placeholder {
+    height: 160px;
+  }
+  .landing-faq-accordion {
+    max-width: 90%;
+  }
+  .footer-logo-img {
+    width: 150px;
+  }
+  .footer-subtext-unify {
+    font-size: 12px;
+    line-height: 18px;
+    max-width: 90%;
+  }
+}
+
+
+@media (max-width: 767.98px) {
+  /* Container Baseline */
+  .landing-container,
+  .container-unify {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    overflow: hidden;
+    --bs-gutter-x: 0;
+  }
+
+  .landing-page h2 {
+    font-size: 32px;
+    line-height: 38px;
+  }
+  .landing-page h3 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  p, .landing-page p {
+    font-size: 16px;
+    line-height: 25px;
+  }
+  .landing-section-title {  
+    margin-bottom: 48px; 
+  }
+  .landing-section {
+    padding: 80px 0;
+  }
+
+  .landing-trust {
+    padding: 0;
+  }
+
+  .landing-section-subtitle {
+    font-size: 4.2667vw; /* 16px / 375px */
+    line-height: 6.4vw;   /* 24px */
+    max-width: 100%;
+  }
+
+  /* 1. Top Announcement Bar - Continuous Smooth Marquee */
+  .landing-top-bar {
+    padding: 2.6667vw 0; /* 10px */
+    min-height: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  .landing-top-bar-marquee {
+    width: 100% !important;
+    overflow: hidden;
+    display: flex;
+    user-select: none;
+  }
+  .landing-top-bar-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    will-change: transform;
+    animation: topBarMarquee 20s linear infinite;
+  }
+  .landing-top-bar:hover .landing-top-bar-track {
+    animation-play-state: paused;
+  }
+  .landing-top-bar-content {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 12px;
+    padding-right: 32px;
+    flex-shrink: 0;
+  }
+  .landing-top-bar-content.marquee-clone {
+    display: inline-flex !important;
+  }
+  .landing-top-bar-inner img {
+    width: 20px;
+    height: 20px;
+  }
+  .landing-top-bar span {
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+
+  /* 2. Site Header */
+  .header-section {
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid var(--border-color);
+    z-index: 99;
+  }
+  .site-header-unify.landing-header {
+    height: 72px;
+  }
+  header .unify-brand {
+   width: 146px;
+    height: 28px;
+  }
+
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .landing-btn-buy {
+    width: auto;
+    height: auto;
+    font-size: 14px;
+    line-height: 15px;
+    letter-spacing: 1px;
+    padding: 12px 32px;
+    border-radius: 4px;
+  }
+
+  /* 3. Hero Section */
+  .landing-hero {
+    padding-top: 48px; 
+    padding-bottom: 32px;
+  }
+
+  .landing-hero-row {
+    --bs-gutter-x: 0;
+  }
+
+  .landing-hero-left {
+    padding-right: 0;
+    margin-bottom: 0;
+  }
+
+  .low-stock-badge {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px; 
+    margin-bottom: 28px; 
+  }
+
+  .low-stock-dot {
+    width: 1.8667vw; 
+    height: 1.8667vw;
+    margin-right: 1.6vw; 
+  }
+
+  .landing-hero-title,
+  .landing-page h1 {
+    font-size: 40px; 
+    line-height: 48px; 
+    letter-spacing: 0;
+    margin-bottom: 36px; 
+  }
+
+  .landing-hero-features {
+    margin: 0 0 40px 0;
+  }
+
+  .landing-hero-features li {
+    font-size: 16px;
+    line-height: 25px;  
+    margin-bottom: 20px; 
+  }
+  .landing-hero-features svg,
+  .landing-hero-features img {
+    width: 20px; 
+    height: 20px;
+    margin-right: 12px;
+    margin-top: 5px;
+    background-size: cover;
+  }
+  button.landing-btn-primary.order-now-button {
+    border-radius: 8px;
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: 2.4px;
+    padding: 16px 20px; 
+  }
+  .landing-hero-left-inner .landing-hero-left-moneyback {
+    font-size: 12px;
+    line-height: 16px;
+    padding-top: 16px;
+  }
+  .landing-hero-row {
+    gap: 32px;
+  }
+
+  .landing-hero-right img {
+    border-radius: 8px;
+    min-height: 342px;
+  }
+
+
+  
+  .hero-check-icon {
+    width: 5.3333vw;
+    height: 5.3333vw;
+    margin-right: 3.2vw;
+    margin-top: 0.5333vw;
+  }
+
+  .landing-btn-primary {
+    font-size: 4.2667vw;
+    line-height: 5.3333vw;
+    letter-spacing: 0.2667vw;
+    min-height: 14.9333vw;
+    padding: 3.7333vw 5.3333vw;
+    border-radius: 2.1333vw;
+    width: 100%;
+  }
+
+  .landing-hero-moneyback {
+    font-size: 3.2vw;
+    line-height: 4.2667vw;
+    margin-top: 3.2vw;
+    margin-bottom: 6.4vw;
+  }
+
+  .landing-hero-right {
+    padding-left: 0;
+    margin-top: 0;
+  }
+
+  .landing-hero-media-card {
+    border-radius: 2.1333vw;
+  }
+
+  /* 4. Trust Logos */
+  .landing-trust-inner {
+    padding-top: 32px; 
+    padding-bottom: 80px;
+  }
+
+  .landing-trust-label {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+  .landing-trust-slider {
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .landing-trust-slider img {
+    height: 24px;
+  }
+
+  .landing-trust-logos {
+    flex-wrap: wrap;
+    gap: 5.3333vw 8.5333vw; /* 20px 32px */
+    justify-content: center;
+  }
+
+  .trust-logo-item {
+    flex: 0 0 calc(50% - 4.2667vw);
+    display: flex;
+    justify-content: center;
+  }
+
+  .trust-logo-item img {
+    height: 5.3333vw; 
+  }
+
+  /* == Engineered section == */
+  .landing-engineered {
+    padding: 80x 0; 
+  }
+  .landing-engineered .landing-section-title {
+    margin-bottom: 32px;
+  }
+  .landing-engineered p {
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  /* == Features section == */
+  .landing-features .landing-section-title {
+    padding-top: 0;
+    margin-bottom: 48px;
+  }
+  .landing-features-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 32px;
+  }
+  .landing-feature-card {
+    padding: 32px;
+    border-radius:  8px;
+    gap: 16px;
+  }
+  .landing-feature-icon,
+  .landing-feature-card img {
+    width: 26px;
+    height: auto;
+  }
+  .landing-page p.landing-feature-desc {
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  .landing-feature-icon-wrap {
+    width: 8.5333vw; /* 32px */
+    height: 8.5333vw;
+  }
+
+  .landing-feature-title {
+    font-size: 4.8vw; /* 18px */
+    line-height: 6.4vw;
+  }
+
+  .landing-feature-desc {
+    font-size: 3.7333vw; /* 14px */
+    line-height: 5.8667vw; /* 22px */
+  }
+
+  /* == Dark stripe == */
+  .landing-dark-strip {
+    padding: 80px 0;
+  }
+  .landing-stat-col {
+    padding: 0;
+    padding-top: 32px;
+  }
+  .landing-stat-col:first-child {
+    padding-top: 0;
+  }
+  .landing-dark-strip .row {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .landing-stat-border {
+    border-left: none;
+    border-top: 1px solid rgba(133, 131, 131, 0.3);
+  }
+  .landing-stat-label {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 12px;
+  }
+  .landing-stat-value {
+    font-size: 24px;
+    line-height: 31.2px;
+  }
+
+  /* == 3-Step Process == */
+  .landing-process-grid {
+    gap: 48px !important;
+  }
+  .landing-process-num {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 20px 28px;
+    border-radius: 12px;
+    margin-bottom: 22px;
+  }
+  .landing-img-placeholder {
+    height: 196px;
+    border-radius:  8px;
+    margin-bottom: 23px;
+  }
+  .landing-process-title {
+    margin-bottom: 23px;
+  }
+  .landing-img-placeholder .placeholder-icon {
+    width: 8.5333vw; /* 32px */
+    height: 8.5333vw;
+    margin-bottom: 2.1333vw;
+  }
+
+  .landing-img-placeholder span {
+    font-size: 3.7333vw; /* 14px */
+  }
+
+  .landing-process-desc {
+    font-size: 3.7333vw; /* 14px */
+    line-height: 5.8667vw; /* 22px */
+    max-width: 100%;
+  }
+
+  /* 9. Ingredients / Materials */
+
+  .landing-materials-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+  }
+  .landing-material-card {
+    padding: 24px;
+    border-radius: 8px;
+  }
+  .landing-material-title {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 17px;
+  }
+  .landing-page p.landing-material-desc {
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  /* 10. Comparison Table */
+  .landing-table th:first-child {
+    min-width: auto;
+  }
+  .landing-table th,
+  .landing-table td {
+    padding: 22px;
+    font-size: 12px;
+    line-height: 14px;  
+    border-color: #C4C7C7;  
+  }
+  
+  .landing-table svg,
+  .landing-table-highlight img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .landing-th-feature {
+    width: 44%;
+    font-size: 2.9333vw; /* 11px */
+  }
+
+  .landing-th-highlight {
+    width: 28%;
+    font-size: 2.9333vw; /* 11px */
+  }
+
+  .landing-th-generic {
+    width: 28%;
+    font-size: 2.9333vw; /* 11px */
+  }
+
+  .table-check-icon {
+    width: 4.8vw; /* 18px */
+    height: 4.8vw;
+  }
+
+  /* 11. Today CTA */
+  .landing-today .section-title {
+    margin-bottom: 32px;
+  }
+  .landing-today .landing-section-subtitle {
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 32px;
+  }
+  .landing-today .unify-btn-primary {
+    max-width: 100%;
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: 2.4px;
+  }
+  .landing-mt-40 {
+    margin-top: 0;
+  }
+  .landing-today .landing-btn-primary {
+    max-width: 100%;
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: 2.4px;
+    border-radius: 8px;
+  }
+  .landing-today-cta-wrap {
+    margin-top: 32px;
+  }
+
+  .landing-today-btn {
+    max-width: 100%;
+  }
+
+  /* 12. Verified Customer Feedback */
+
+  .landing-feedback-grid {
+    row-gap: 32px;
+  }
+  .landing-feedback-card {
+    padding: 32px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .landing-stars svg,
+  .landing-stars img {
+    width: 20px;
+    height: 19px;
+  }
+  .landing-page p.landing-feedback-quote {
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 25px;
+    padding: 0;
+  }
+  .landing-stars {
+    gap: 4px;
+    margin-bottom: 0;
+  }
+  .landing-author-info {
+    gap: 0;
+  }
+  .star-icon {
+    width: 4.2667vw; /* 16px */
+    height: 4.2667vw;
+  }
+  .landing-feedback-quote {
+    font-size: 3.7333vw; /* 14px */
+    line-height: 5.8667vw; /* 22px */
+    margin-bottom: 4.2667vw; /* 16px */
+  }
+  .landing-author-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 1.6vw; /* 6px */
+    margin-right: 3.2vw; /* 12px */
+  }
+  .landing-author-avatar svg {
+    width: 20px;
+    height: 20px;
+  }
+  .landing-author-info strong {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .landing-author-info span {
+    font-size: 12px;
+    line-height: 16px;
+    padding-top: 4px;
+  }
+
+  
+  /* 13. FAQ Accordion */
+  .landing-faq {
+    padding: 0 0 80px; 
+  }
+  button.accordion-button.landing-accordion-btn {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    padding: 16px 20px;
+    height: auto;
+    min-height: auto;
+  }
+  .accordion-button::after {
+    width: 16px;
+    height: 12px;
+  }
+  .landing-accordion-body {
+    font-size: 16px;
+    line-height: 25px;
+    padding: 0 20px 16px ;
+  } 
+  .landing-faq-accordion {
+    max-width: 100%;
+  }
+  .landing-accordion-item {
+    border-radius:  8px;
+    margin-bottom: 16px;
+  }
+
+
+  /* 14. Footer */
+  .site-footer-unify {
+    padding: 80px 0;
+  }
+  .site-footer-unify .brand-unify img {
+    display: block;
+    width: 174px;
+    height: auto;
+  }
+  .site-footer-unify .brand-unify {
+    margin-bottom: 32px;
+  }
+  .landing-footer-links {
+    flex-wrap: wrap;
+    row-gap: 24px;
+    column-gap: 32px; 
+    margin-bottom: 32px;
+    justify-content: center;
+  }
+  .landing-footer-links a {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+  }
+  .secure-payment-text {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 1.2px;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .payment-card-holder {
+    gap: 22px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+  .payment-card-holder img {
+    height: 22px;
+  }
+  .footer-subtext-unify {
+    max-width: 100%;
+    font-size: 12px;
+    line-height: 19px;
+    margin-top: 0 !important;
+  }
+}
+
+@keyframes topBarMarquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-top-bar-track {
+    animation: none;
+  }
+}

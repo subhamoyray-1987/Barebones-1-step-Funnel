@@ -1,0 +1,1508 @@
+/* ==========================================================================
+   UNIFY CMS V6 - MASTER MAIN STYLESHEET 
+   ========================================================================== */
+
+:root {
+  --font-main: "Inter", sans-serif;
+  --bg-primary: #ffffff;
+  --bg-secondary: #fafafa;
+  --bg-tertiary: #e3e2e2;
+  --bg-placeholder: #E9E8E7;
+  --bg-dark: #000000;
+  --text-primary: #111111;
+  --text-secondary: #444748;
+  --text-default: #1B1C1C;
+  --text-light: #ffffff;
+  --text-light-gray: #a1a1aa;
+  --text-dark-gray: #333333;
+  --border-color: #e5e5e5;
+  --border-input: #d4d4d8;
+  --color-error: #ef4444;
+  --color-error-highlight: #FF0000;
+  --color-error-ultra-light: #FFE6E6;
+  --color-error-light: #f87171;
+  --color-error-dark: #dc2626;
+  --color-star: #facc15;
+  --bg-default: #FBF9F9;
+  --bg-grey: rgba(251, 249, 249, 1);
+  --bg-quaternary: #F5F3F3;
+  --border-default: #C4C7C7;
+  --border-grey: rgba(196, 199, 199, 1);
+  
+  --h1-fw: 800;
+  --h1-fs: 3.7500vw;
+  --h1-lh: 4.1406vw;
+  --h1-ls: -0.0674vw;
+  --h2-fw: 700;
+  --h2-fs: 2.5000vw;
+  --h2-lh: 2.9688vw;
+  --h2-ls: 0vw;
+  --h3-fw: 700;
+  --h3-fs: 1.8750vw;
+  --h3-lh: 2.5000vw;
+  --h3-ls: 0vw;
+  --h4-fs: 1.8750vw;
+  --h4-lh: 2.5000vw;
+  --p-fw: 400;
+  --p-fs: 1.2500vw;
+  --p-lh: 1.9531vw;
+  --p-ls: 0vw;
+  --spacing-80: 6.2500vw;
+
+  /* Accent & Status */
+  --color-success: #16a34a;
+  --color-success-light: #ECFFF3;
+  --color-accent-paypal: #ffc439;
+  --color-accent-applepay: #000000;
+
+  /* Specific Hover / Active Button States */
+  --btn-primary-hover-bg: #00000099;
+  --btn-yellow-hover-bg: rgba(255, 196, 57, 0.6);
+}
+
+/* ==========================================================================
+   HTML RESETS & GLOBAL ELEMENTS (h1-h6, p, Layout Utilities)
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-default);
+}
+
+.landing-page {
+  font-family: var(--font-main);
+  color: var(--text-primary);
+  background-color: var(--bg-default);
+  overflow-x: hidden;
+}
+
+.landing-page h1, h1 {
+  font-family: var(--font-main);
+  font-weight: var(--h1-fw);
+  font-size: var(--h1-fs);
+  line-height: var(--h1-lh);
+  /* letter-spacing: var(--h1-ls); */
+}
+.landing-page h2, h2 {
+  font-family: var(--font-main);
+  font-weight: var(--h2-fw);
+  font-size: var(--h2-fs);
+  line-height: var(--h2-lh);
+  letter-spacing: var(--h2-ls);
+  color: var(--text-default);
+}
+.landing-page h3, h3 {
+  font-family: var(--font-main);
+  font-weight: var(--h3-fw);
+  font-size: var(--h3-fs);
+  line-height: var(--h3-lh);
+  letter-spacing: var(--h3-ls);
+}
+
+h4 {
+  font-family: var(--font-main);
+  font-weight: var(--h3-fw);
+  font-size: var(--h4-fs);
+  line-height: var(--h4-lh);
+}
+
+.landing-page p, p {
+  font-family: var(--font-main);
+  font-weight: var(--p-fw);
+  font-size: var(--p-fs);
+  line-height: var(--p-lh);
+  letter-spacing: var(--p-ls);
+}
+
+.landing-container {
+  width: 100% !important;
+  max-width: 89.0625vw !important;
+  margin: 0 auto;
+  --bs-gutter-x: 1.6842vw;
+}
+.landing-text-center {
+  text-align: center;
+}
+.landing-mt-40 {
+  margin-top: 2.807vw;
+}
+.landing-mb-40 {
+  margin-bottom: 2.807vw;
+}
+.landing-mt-48 {
+  margin-top: 3.3684vw;
+}
+.landing-section {
+  padding: var(--spacing-80) 0;
+}
+
+/* ==========================================================================
+   BUTTON COMPONENTS (Class-Based Reusable Button Component Library)
+   ========================================================================== */
+
+.landing-btn {
+  font-family: var(--font-main);
+  box-sizing: border-box;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Primary Button (.unify-btn-primary) */
+.unify-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-dark);
+  color: var(--bg-primary);
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 1.8750vw;
+  line-height: 2.5000vw;
+  letter-spacing: 0.1563vw;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5625vw 1.5625vw;
+  border-radius: 0.6250vw;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 0.7813vw 1.1719vw #0000001A;
+  box-sizing: border-box;
+}
+.unify-btn-primary-md {
+  padding: 1.2500vw 3.7500vw;
+  font-size: 1.0938vw;
+  line-height: 1.1719vw;
+  letter-spacing: 0.0781vw;
+  font-weight: 700;
+  border-radius: 0.3125vw;
+  text-transform: uppercase;
+  height: 3.6719vw;
+  background-color: var(--bg-dark);
+  color: var(--bg-primary);
+  text-decoration: none;
+  outline: none;
+  border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Primary Button: Hover & Active States (#00000099) */
+.unify-btn-primary:hover,
+.unify-btn-primary:active,
+.unify-btn-primary:focus-visible,
+.unify-btn-primary.is-active,
+.unify-btn-primary-md:hover,
+.unify-btn-primary-md:active,
+.unify-btn-primary-md:focus-visible {
+  background-color: var(--btn-primary-hover-bg, #00000099) !important;
+}
+
+/* Yellow / PayPal Button (.unify-btn-yellow, .landing-btn-paypal) */
+.unify-btn-yellow,
+.landing-btn-paypal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-accent-paypal, #FFC439);
+  color: var(--text-primary, #111111);
+  font-family: var(--font-main);
+  font-weight: var(--h3-fw, 700);
+  font-size: var(--h3-fs, 1.8750vw);
+  line-height: var(--h3-lh, 2.5000vw);
+  letter-spacing: 0.1563vw;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.1228vw 2.2456vw;
+  border-radius: 0.6250vw;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, opacity 0.3s ease, color 0.3s ease;
+  box-shadow: 0 0.7813vw 1.1719vw rgba(255, 196, 57, 0.2);
+  box-sizing: border-box;
+}
+
+/* Yellow Button: Hover & Active States (#FFC439 with 60% opacity) */
+.unify-btn-yellow:hover,
+.unify-btn-yellow:active,
+.unify-btn-yellow:focus-visible,
+.unify-btn-yellow.is-active,
+.landing-btn-paypal:hover,
+.landing-btn-paypal:active,
+.landing-btn-paypal:focus-visible,
+.landing-btn-paypal.is-active {
+  background-color: var(--btn-yellow-hover-bg, rgba(255, 196, 57, 0.6)) !important;
+  color: var(--text-primary, #111111) !important;
+}
+
+/* PayPal Logo Icon Helper */
+.landing-btn-paypal svg,
+.landing-btn-paypal img {
+  height: 1.8750vw;
+  width: auto;
+  display: block;
+}
+
+/* Outline / Action Button (.unify-btn-outline, .landing-btn-action) */
+.unify-btn-outline,
+.landing-btn-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  font-weight: var(--h3-fw, 700);
+  font-size: 1.0938vw;
+  line-height: 1.4063vw;
+  letter-spacing: 0.0781vw;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.7813vw 1.8750vw;
+  border-radius: 0.3906vw;
+  border: 1px solid var(--border-input);
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  box-sizing: border-box;
+}
+
+/* Outline Button: Hover & Active States */
+.unify-btn-outline:hover,
+.unify-btn-outline:active,
+.unify-btn-outline:focus-visible,
+.unify-btn-outline.is-active,
+.landing-btn-action:hover,
+.landing-btn-action:active,
+.landing-btn-action:focus-visible,
+.landing-btn-action.is-active {
+  background-color: var(--bg-quaternary);
+  border-color: var(--bg-dark);
+  color: var(--text-primary);
+}
+
+/* Explicit Action REMOVE variant */
+.landing-btn-action.is-remove,
+.landing-btn-action--remove {
+  background-color: var(--bg-primary);
+  border-color: var(--border-input);
+  color: var(--text-primary);
+}
+
+.landing-btn-action.is-remove:hover,
+.landing-btn-action.is-remove:active,
+.landing-btn-action--remove:hover,
+.landing-btn-action--remove:active {
+  background-color: var(--bg-quaternary);
+  border-color: var(--bg-dark);
+  color: var(--text-primary);
+}
+
+/* Header Buy Button (.landing-btn-buy) */
+.landing-btn-buy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  text-decoration: none;
+  width: 10.8594vw;
+  height: 3.0469vw;
+  border-radius: 0.2807vw;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 1.0938vw;
+  line-height: 1.1719vw;
+  letter-spacing: 0.0781vw;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background .3s;
+}
+
+.landing-btn-buy:hover,
+.landing-btn-buy:active {
+  background: #00000099;
+  color: var(--text-light);
+}
+
+/* Button Utility Modifiers */
+.landing-btn-full {
+  width: 100% !important;
+}
+
+.landing-btn-sm {
+  font-size: 1.0156vw;
+  line-height: 1.4063vw;
+  padding: 0.6250vw 1.2500vw;
+  border-radius: 0.3125vw;
+}
+
+.landing-btn-lg {
+  font-size: 2.0313vw;
+  line-height: 2.6563vw;
+  padding: 1.2500vw 2.5000vw;
+  border-radius: 0.7813vw;
+}
+
+/* ==========================================================================
+   4TH. HEADER VARIANTS (Global Secondary Header Component)
+   Supports: .unify-header-secondary, .checkout-header, .upsell-header, .header-v2
+   ========================================================================== */
+.unify-header-secondary,
+.checkout-header,
+.upsell-header,
+.header-v2 {
+  width: 100%;
+  background-color: var(--bg-default);
+  border-bottom: 0.0781vw solid var(--border-default);
+  box-sizing: border-box;
+}
+
+.unify-header-secondary-container,
+.checkout-container,
+.header-v2-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* Secondary Header Logo */
+.unify-header-secondary-logo,
+.checkout-logo,
+.upsell-logo,
+.header-v2-logo {
+  font-family: var(--font-main, "Inter", sans-serif);
+  font-weight: 800;
+  color: var(--text-primary, #111111);
+  text-decoration: none;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  display: inline-block;
+  line-height: 1;
+  transition: opacity 0.2s ease;
+}
+
+.unify-header-secondary-logo:hover,
+.checkout-logo:hover,
+.upsell-logo:hover,
+.header-v2-logo:hover {
+  color: var(--text-primary, #111111);
+  opacity: 0.85;
+}
+
+/* Secondary Header Badges Container */
+.unify-header-secondary-badges,
+.checkout-header-badges,
+.upsell-header-badges,
+.header-v2-badges {
+  display: flex;
+  align-items: center;
+}
+
+/* Secondary Header Badge Item */
+.header-badge-item {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-main, "Inter", sans-serif);
+  font-weight: 600;
+  color: var(--text-secondary);
+  user-select: none;
+}
+
+.header-badge-item svg,
+.header-badge-icon {
+  flex-shrink: 0;
+  display: block;
+}
+
+.header-badge-item span {
+  white-space: nowrap;
+}
+
+
+/* --------------------------------------------------------------------------
+SITE FOOTER
+   -------------------------------------------------------------------------- */
+.site-footer-unify {
+  padding: var(--spacing-80) 0;
+  border-top: 1px solid var(--border-default);
+  background: var(--bg-primary);
+  overflow: hidden;
+}
+.site-footer-unify .brand-unify {
+  margin-bottom: 2.5000vw;
+}
+.site-footer-unify .brand-unify img {
+  width: 13.5937vw;
+}
+.landing-footer-links {
+  display: flex;
+  gap: 2.5000vw;
+}
+.landing-footer-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1.0938vw;
+  line-height: 1.2500vw;
+  font-weight: 600;
+}
+.landing-footer-links a:hover {
+  text-decoration: underline;
+}
+.secure-payment-text {
+  display: block;
+  margin-top: 2.5000vw;
+  margin-bottom: 1.2500vw;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 0.9375vw;
+  line-height: 1.2500vw;
+  letter-spacing: 0.0938vw;
+  text-align: center;
+  color: var(--text-secondary);
+}
+.payment-card-holder {
+  display: flex;
+  gap: 1.8750vw;
+}
+.payment-card-holder img {
+  width: auto;
+  display: block;
+  height: 1.8750vw;
+  object-fit: cover;
+  opacity: .4;
+}
+.footer-subtext-unify {
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 0.9375vw;
+  line-height: 1.5625vw;
+  letter-spacing: 0vw;
+  text-align: center;
+  vertical-align: middle;
+  max-width: 57vw;
+  margin-top: 2.5000vw !important;
+  color: var(--text-secondary);
+}
+/* ---------------------------------------------- */
+
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE SECTION 01: TOP ANNOUNCEMENT BAR
+   -------------------------------------------------------------------------- */
+.landing-top-bar {
+  background: var(--bg-dark);
+  color: var(--text-light);
+  padding: 0.8615vw 0;
+}
+.landing-top-bar-marquee {
+  width: var(--container-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.landing-top-bar-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.landing-top-bar-content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8594vw;
+}
+.landing-top-bar-content.marquee-clone {
+  display: none; /* Hidden on desktop */
+}
+.landing-top-bar-inner {
+  gap: 0.8421vw;
+}
+.landing-top-bar span {
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 1.0938vw;
+  line-height: 1.2500vw;
+  letter-spacing: 0.0547vw;
+  text-align: center;
+  text-transform: uppercase;
+}
+.landing-top-bar-inner img {
+  width: 1.4035vw;
+  height: 1.4035vw;
+}
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE SECTION 02: PRIMARY SITE HEADER & NAVIGATION (<!-- SITE HEADER -->)
+   -------------------------------------------------------------------------- */
+.header-section {
+  border-bottom: 1px solid var(--border-grey);
+  background: var(--bg-grey);
+}
+.landing-header {
+  height: var(--spacing-80);
+  margin: 0 auto;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+}
+.landing-header .landing-container {
+  width: 100% !important;
+}
+header .unify-brand {
+  display: block;
+  width: 13.6719vw;
+  height: 2.5000vw;
+  background-size: cover;
+}
+header .unify-brand:hover {
+  opacity: 0.8;
+}
+.landing-logo {
+  text-decoration: none;
+  color: var(--bg-dark);
+  font-weight: 800;
+  font-size: 1.8750vw;
+}
+/* .landing-logo-text {
+  letter-spacing: -0.0351vw;
+} */
+.landing-nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2.2456vw;
+}
+.landing-nav .nav-link-unify {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 1.0938vw;
+  line-height: 1.2500vw;
+  letter-spacing: 0px;
+}
+.landing-nav .nav-link-unify:hover {
+  color: var(--bg-dark);
+}
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE SECTION: HERO SECTION
+   -------------------------------------------------------------------------- */
+.landing-hero {
+  padding: 6.2500vw 0;
+  padding-bottom: 3.7500vw;
+}
+.landing-hero-row {
+  --bs-gutter-x: 1.6842vw;
+}
+.landing-hero-left {
+  padding-right: 1.9vw;
+}
+.landing-hero-left-inner {
+  padding-top: 1.2500vw;
+}
+.low-stock-badge {
+  display: inline-flex;
+  align-items: center;
+  border: 0.0702vw solid var(--color-error-light);
+  background: var(--color-error-ultra-light);
+  color: var(--text-default);
+  padding: 0.3125vw 0.9375vw;
+  border-radius: 2.807vw;
+  font-size: 0.9375vw;
+  font-weight: 700;
+  margin-bottom: 2.1875vw;
+}
+.low-stock-dot {
+  width: 0.5614vw;
+  height: 0.5614vw;
+  background: var(--color-error-dark);
+  border-radius: 50%;
+  margin-right: 0.6250vw;
+  animation: pulse .3s ease-in-out infinite;
+}
+.landing-hero-title {
+  margin-bottom: 2.8125vw;
+}
+.landing-hero-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 3.1250vw 0;
+  padding-right: 2.1vw;
+}
+.landing-hero-features li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5625vw;
+  font-size: 1.4063vw;
+  color: var(--text-secondary);
+  line-height: 2.1094vw;
+}
+.landing-hero-features svg,
+.landing-hero-features img {
+  width: 1.5625vw;
+  height: 1.5625vw;
+  color: var(--bg-dark);
+  margin-right: 0.8421vw;
+  flex-shrink: 0;
+  margin-top: 0.3125vw;
+  background-size: cover;
+}
+.landing-hero .unify-btn-primary {
+  width: 100%;
+}
+.landing-hero-left-inner .landing-hero-left-moneyback {
+  text-align: center;
+  font-size: 0.9375vw;
+  line-height: 1.2500vw;
+  letter-spacing: 0;
+  font-weight: 500;
+  margin-top: 1.2500vw;
+  margin-bottom: 0;
+  color: var(--text-secondary);
+}
+.landing-hero-right {
+  padding-left: 1.8421vw;
+  padding-right: 0.8421vw;
+}
+.landing-hero-right img {
+  min-height: 42.6563vw;
+}
+
+/* Hero Form Card (Existing Preserved) */
+.landing-form-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 2.3vw;
+  padding-top: 2vw;
+  border-radius: 0.5614vw;
+  box-shadow: 0 1.4035vw 3.5088vw rgba(0, 0, 0, 0.05);
+}
+.landing-form-card form {
+  padding-inline: 0.5vw;
+}
+.landing-form-title {
+  font-family: var(--font-main);
+  font-weight: var(--h2-fw);
+  font-size: var(--h2-fs);
+  line-height: var(--h2-lh);
+  letter-spacing: var(--h2-ls);
+  vertical-align: middle;
+  margin-bottom: 1.6vw;
+}
+.landing-form-group,
+.landing-form-row {
+  margin-bottom: 1.1228vw;
+}
+.landing-form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.5614vw;
+  margin-left: -0.5614vw;
+}
+.landing-form-row > [class*="col-"] {
+  padding-right: 0.5614vw;
+  padding-left: 0.5614vw;
+}
+.landing-form-label {
+  display: block;
+  font-size: 0.8421vw;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.4211vw;
+  letter-spacing: 0.0351vw;
+}
+.landing-form-input {
+  width: 100%;
+  padding: 0.8421vw;
+  font-size: 1.1228vw;
+  border: 1px solid var(--border-input);
+  border-radius: 0.2807vw;
+  background: var(--bg-primary);
+  color: var(--bg-dark);
+  outline: none;
+  font-family: inherit;
+}
+.landing-form-input:focus {
+  border-color: var(--bg-dark);
+}
+.landing-input-error {
+  border-color: var(--color-error);
+}
+.landing-error-text {
+  color: var(--color-error);
+  font-size: 0.8421vw;
+  margin-top: 0.2807vw;
+}
+.landing-form-card .unify-btn-primary {
+  margin-top: 1.1228vw;
+  padding: 1.4035vw;
+  font-size: 1.6842vw;
+  line-height: 2.2456vw;
+  letter-spacing: 0.1404vw;
+  border-radius: 8px;
+}
+.landing-secure-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8421vw;
+  color: var(--text-secondary);
+  margin-top: 1.1228vw;
+}
+.landing-secure-note svg {
+  width: 0.9825vw;
+  height: 0.9825vw;
+  margin-right: 0.4211vw;
+}
+
+/* Hero Testimonial Card (Existing Preserved) */
+.landing-hero-testimonial {
+  background: var(--bg-secondary);
+  border: 0.0702vw solid var(--border-color);
+  padding: 1.6842vw;
+  border-radius: 0.5614vw;
+}
+.landing-testimonial-quote {
+  font-style: italic;
+  font-size: 1.1228vw;
+  line-height: 1.6842vw;
+  color: var(--text-dark-gray);
+  margin-bottom: 1.6842vw;
+}
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE SECTION 04: TRUST LOGOS
+   -------------------------------------------------------------------------- */
+.landing-trust {
+  padding: 0;
+  text-align: center;
+}
+.landing-trust-inner {
+  padding: 2.5000vw 0 6.2500vw 0;
+  border-top: 0.0702vw solid var(--border-color);
+}
+.landing-trust-label {
+  font-size: 0.9375vw;
+  line-height: 1.2500vw;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.1563vw;
+  margin-bottom: 1.8750vw;
+  text-transform: uppercase;
+}
+.landing-trust-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.7500vw;
+}
+.landing-trust-slider img {
+  display: block;
+  width: auto;
+  height: 1.8750vw;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: .3;
+  transition: .3s ease-in-out;
+}
+.landing-trust-slider img:hover {
+  opacity: 1;
+}
+.landing-trust-logos {
+  display: flex;
+  justify-content: center;
+  gap: 4.4912vw;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.landing-logo-placeholder {
+  font-size: 1.6842vw;
+  font-weight: 700;
+  color: var(--text-light-gray);
+}
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE SECTION 05: ENGINEERED SECTION
+   -------------------------------------------------------------------------- */
+.landing-engineered {
+  background: var(--bg-quaternary);
+  padding: 6.2500vw 0;
+}
+.landing-engineered .section-title {
+  margin-bottom: 2.5000vw;
+}
+.landing-engineered p {
+  font-size: 1.4063vw;
+  line-height: 2.1094vw;
+  font-weight: 400;
+}
+.landing-section-title {
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 2.2456vw;
+  line-height: 2.6667vw;
+  letter-spacing: 0vw;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 1.6842vw;
+}
+.landing-section-subtitle {
+  font-size: 1.2632vw;
+  line-height: 1.9649vw;
+  max-width: 47.1579vw;
+  margin: 0 auto;
+  color: var(--text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE SECTION 06: FEATURES / BENEFITS
+   -------------------------------------------------------------------------- */
+.landing-features .landing-section-title {
+  padding-top: .3vw;
+}
+.landing-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 3.7500vw;
+  gap: 2.5000vw;
+  margin-inline: 0;
+}
+.landing-features-grid .col-md-4,
+.landing-materials-grid {
+  --bs-gutter-x: 0;
+  width: 100%;
+}
+.landing-feature-card {
+  background: var(--bg-default);
+  border: 0.0702vw solid var(--border-default);
+  padding: 2.504vw;
+  border-radius: 0.6250vw;
+  height: 100%;
+  gap: 1.5625vw;
+}
+.landing-feature-icon,
+.landing-feature-card img{
+  width: 2.3438vw;
+  height: 2.3438vw;
+  color: var(--bg-dark);
+  background-image: cover;
+}
+.landing-feature-title {
+  font-size: 1.4035vw;
+  font-weight: 700;
+  margin-bottom: 0px;
+}
+.landing-page p.landing-feature-desc {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2500vw;
+  line-height: 1.9531vw;
+  letter-spacing: 0;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE SECTION 07: DARK STRIP
+   -------------------------------------------------------------------------- */
+.landing-dark-strip {
+  background: var(--bg-dark);
+  color: var(--text-light);
+  padding: 6.2500vw 0;
+}
+.landing-stat-col {
+  text-align: center;
+}
+.landing-stat-border {
+  border-left: 0.0702vw solid #8583834D;
+}
+.landing-stat-label {
+  font-size: 1.0938vw;
+  line-height: 1.2500vw;
+  font-weight: 600;
+  color: var(--bg-primary);
+  opacity: 60%;
+  margin-bottom: 0.9375vw;
+}
+.landing-stat-value {
+  font-size: 1.8750vw;
+  line-height: 2.5000vw;
+  font-weight: 700;
+  color: var(--bg-primary);
+}
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE SECTION 08: 3-STEP PROCESS
+   -------------------------------------------------------------------------- */
+.landing-process {
+  padding: var(--spacing-80) 0;
+}
+.landing-process-grid {
+  margin-top: 3.7500vw;
+}
+.landing-process-grid .col-md-4 {
+  --bs-gutter-x: clamp(3.7500vw, 3.7500vw, 3.7500vw);
+}
+.landing-process-card {
+  text-align: center;
+  position: relative;
+}
+.landing-process-num {
+  width: fit-content;
+  height: auto;
+  padding: 1.5625vw 2.0313vw;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4063vw;
+  line-height: 1.8750vw;
+  font-weight: 700;
+  border-radius: 0.8421vw;
+  margin: 0 auto 1.8750vw auto;
+}
+.landing-img-placeholder {
+  background: var(--bg-placeholder);
+  width: 100%;
+  height: 15.2344vw;
+  border-radius: 0.6250vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  margin-bottom: 1.8750vw;
+  object-fit: cover;
+  border: 1px solid var(--border-default);
+}
+.landing-img-placeholder svg {
+  width: 4.2969vw;
+  height: 3.7500vw;
+  margin-bottom: 1.5625vw;
+}
+.landing-img-placeholder img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+.landing-process-title {
+  font-size: 1.4035vw;
+  font-weight: 700;
+  margin-bottom: 1.8750vw;
+}
+.landing-process-desc {
+  font-size: 1.1228vw;
+  color: var(--text-secondary);
+  line-height: 1.6842vw;
+  padding: 0 1.1228vw;
+  max-width: 97%;
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE SECTION 09: INGREDIENTS / MATERIALS
+   -------------------------------------------------------------------------- */
+.landing-materials {
+  background: var(--bg-tertiary);
+  padding: var(--spacing-80) 0;
+}
+.landing-materials-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 3.7500vw;
+  gap: 1.8750vw;
+}
+.landing-materials-grid .col-md-3 {
+  width: 100%;
+}
+.landing-material-card {
+  background: var(--bg-primary);
+  padding: 1.8750vw;
+  height: 100%;
+  border-radius: 0.6250vw;
+}
+.landing-material-title {
+  font-size: 1.0938vw;
+  line-height: 1.2500vw;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-bottom: 1.2500vw;
+  margin: 0;
+}
+.landing-page p.landing-material-desc {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: 1.2500vw;
+  line-height: 1.9531vw;
+}
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE SECTION 10: COMPARISON
+   -------------------------------------------------------------------------- */
+.landing-comparison {
+  padding: var(--spacing-80) 0;
+  background: var(--bg-primary);
+}
+.landing-table-wrapper {
+  margin-top: 3.7500vw;
+  overflow-x: auto;
+}
+.landing-table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  text-align: left;
+}
+.landing-table th,
+.landing-table td {
+  padding: 1.8750vw;
+  border-bottom: 0.0702vw solid var(--border-default);
+  font-size: 1.2500vw;
+  line-height: 2.0313vw;
+  text-align: left;
+}
+.landing-table th {
+  border-bottom: none;
+}
+.landing-table th:first-child,
+.landing-table td:first-child {
+  text-align: left;
+  min-height: 72px;
+}
+.landing-table th:first-child {
+  min-width: 42.1875vw;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.landing-table th:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.landing-table th {
+  font-size: 1.0938vw;
+  line-height: 1.3281vw;
+  font-weight: 700;
+  background: #f5f3f3;
+  text-align: left;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  min-width: 23.4375vw;
+}
+.landing-table-highlight {
+  background: var(--bg-secondary);
+}
+.landing-table th.landing-table-highlight {
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+.landing-table svg,
+.landing-table-highlight img {
+  width: 1.5625vw;
+  height: 1.5625vw;
+  color: var(--bg-dark);
+  background-size: cover;
+}
+.landing-table-minus {
+  color: var(--text-light-gray);
+  font-weight: 700;
+  opacity: 40%;
+}
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE SECTION 11: TODAY CTA
+   -------------------------------------------------------------------------- */
+.landing-today {
+  background: var(--bg-quaternary);
+  padding: var(--spacing-80) 0;
+}
+.landing-today .section-title {
+  margin-bottom: 2.5000vw;
+}
+.landing-today .landing-section-subtitle {
+  font-size: 1.4063vw;
+  line-height: 2.1094vw;
+  margin-bottom: 2.5000vw;
+}
+.landing-today .unify-btn-primary {
+  max-width: 42.6563vw;
+  width: 100%;
+  margin-inline: auto;
+}
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE SECTION 12: CUSTOMER FEEDBACK
+   -------------------------------------------------------------------------- */
+.landing-feedback {
+  padding: var(--spacing-80) 0;
+}
+.landing-feedback-grid {
+  margin-top: 3.7500vw;
+  row-gap: 1.6842vw;
+}
+.landing-feedback-grid .col-md-4 {
+  --bs-gutter-x: clamp(2.5000vw, 2.5000vw, 2.5000vw);
+}
+.landing-feedback-card {
+  background: var(--bg-default);
+  border: 0.0702vw solid var(--border-default);
+  padding: 2.5000vw;
+  border-radius: 0.5614vw;
+  height: 100%;
+}
+.landing-stars {
+  display: flex;
+  align-items: center;
+  gap: 0.3125vw;
+}
+.landing-stars svg,
+.landing-stars img {
+  width: 1.5625vw;
+  height: 1.4844vw;
+  background-size: cover;
+}
+.landing-page p.landing-feedback-quote {
+  color: var(--text-default);
+  padding: 1.8750vw 0;
+  max-width: 20.4912vw;
+  font-size: 1.2500vw;
+  line-height: 1.9531vw;
+  margin: 0;
+  font-style: italic;
+}
+.landing-testimonial-author {
+  display: flex;
+  align-items: center;
+}
+.landing-author-avatar {
+  width: 3.7500vw;
+  height: 3.7500vw;
+  border-radius: 0.9375vw;
+  background: var(--bg-placeholder);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.2500vw;
+  overflow: hidden;
+}
+.landing-author-avatar svg {
+  width: 2.2456vw;
+  height: 2.2456vw;
+}
+.landing-author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3125vw;
+}
+.landing-author-info strong {
+  font-size: 1.0938vw;
+  line-height: 1.2500vw;
+  color: var(--text-default);
+}
+.landing-author-info span {
+  font-size: 0.9375vw;
+  line-height: 1.2500vw;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE SECTION 13: FAQ
+   -------------------------------------------------------------------------- */
+.landing-faq {
+  padding: 0 0 var(--spacing-80);
+}
+.landing-faq-accordion {
+  margin: 5.0000vw auto 0;
+  max-width: 60.0000vw;
+}
+.landing-accordion-item {
+  border: 0.0702vw solid var(--border-default) !important;
+  border-radius: 0.6250vw !important;
+  background: transparent;
+  margin-bottom: 1.2500vw;
+}
+button.accordion-button.landing-accordion-btn {
+  font-size: 1.0938vw;
+  line-height: 1.2500vw;
+  letter-spacing: 0vw;
+  padding: 1.5625vw 1.8750vw;
+}
+.accordion-button::after {
+  width: 1.0938vw;
+  height: 0.7813vw;
+  background-size: cover;
+}
+.landing-accordion-btn {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 0.9825vw;
+  line-height: 1.1228vw;
+  letter-spacing: 0;
+  vertical-align: middle;
+  color: var(--text-default);
+  padding: 1.6842vw;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+.landing-accordion-btn:not(.collapsed) {
+  color: var(--bg-dark);
+}
+.landing-accordion-body {
+  font-size: 1.2500vw;
+  line-height: 1.9531vw;
+  color: var(--text-default);
+  padding: 0 1.8750vw 1.5625vw;
+}
+
+/* ==========================================================================
+   HOMEPAGE SECTION 15: ANIMATIONS & KEYFRAMES
+   ========================================================================== */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.85;
+    transform: scale(1.02);
+  }
+}
+
+
+
+
+
+/* Secondary Header - Desktop */
+@media (min-width: 1024px) {
+  .checkout-container,
+  .unify-header-secondary-container,
+  .header-v2-container {
+    width: 89.0625vw !important; /* 1140px / 1280px */
+    max-width: 89.0625vw !important;
+    margin: 0 auto;
+    --bs-gutter-x: 1.6842vw;
+  }
+
+  .unify-header-secondary,
+  .checkout-header,
+  .upsell-header,
+  .header-v2 {
+    padding: 1.8750vw 0;
+  }
+
+  .unify-header-secondary-logo,
+  .checkout-logo,
+  .upsell-logo,
+  .header-v2-logo {
+    font-size: 1.8750vw;
+    line-height: 2.5000vw;
+    font-weight: 800;
+    letter-spacing: 0;
+  }
+
+  .unify-header-secondary-badges,
+  .checkout-header-badges,
+  .upsell-header-badges,
+  .header-v2-badges {
+    gap: 2.5000vw;
+  }
+
+  .header-badge-item {
+    font-size: 1.0938vw;
+    line-height: 1.2500vw;
+    gap: 0.6250vw;
+    font-weight: 700;
+    align-items: end;
+  }
+
+  .header-badge-item svg,
+  .header-badge-item img {
+    width: 1.2500vw;
+    height: 1.5625vw;
+    background-size: cover;
+  }
+
+  .header-badge-icon {
+    width: 1.25vw;
+    height: 1.25vw;
+  }
+}
+
+/* Secondary Header - Tablet Media Query (768px to 1023.98px) */
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .checkout-container,
+  .unify-header-secondary-container,
+  .header-v2-container {
+    width: 92% !important;
+    max-width: 720px !important;
+    padding: 0 15px !important;
+  }
+
+  .unify-header-secondary,
+  .checkout-header,
+  .upsell-header,
+  .header-v2 {
+    padding: 16px 0;
+  }
+
+  .unify-header-secondary-logo,
+  .checkout-logo,
+  .upsell-logo,
+  .header-v2-logo {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .unify-header-secondary-badges,
+  .checkout-header-badges,
+  .upsell-header-badges,
+  .header-v2-badges {
+    gap: 16px;
+  }
+
+  .header-badge-item {
+    font-size: 13px;
+    line-height: 16px;
+    gap: 6px;
+  }
+
+  .header-badge-item svg,
+  .header-badge-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* --== Button Tablet Responsive ==-- */
+  .unify-btn-primary,
+  .unify-btn-yellow,
+  .landing-btn-paypal {
+    font-size: 22px;
+    line-height: 28px;
+    letter-spacing: 2px;
+    padding: 16px 24px;
+    border-radius: 8px;
+    box-shadow: 0 10px 15px #0000001A;
+  }
+
+  .landing-btn-paypal svg,
+  .landing-btn-paypal img {
+    height: 24px;
+  }
+
+  .unify-btn-outline,
+  .landing-btn-action {
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 1px;
+    padding: 9px 18px;
+    border-radius: 5px;
+  }
+}
+
+/* Secondary Header - Mobile Media Query (<= 767.98px) */
+@media (max-width: 767.98px) {
+  .checkout-container,
+  .unify-header-secondary-container,
+  .header-v2-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    overflow: hidden;
+    --bs-gutter-x: 0;
+  }
+  .unify-header-secondary {
+    padding: 16px 0;
+    height: 81px;
+  }
+  .unify-header-secondary-logo,
+  .checkout-logo,
+  .upsell-logo,
+  .header-v2-logo {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .unify-header-secondary-badges,
+  .checkout-header-badges,
+  .upsell-header-badges,
+  .header-v2-badges {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+  }
+  .header-badge-item {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    gap: 8px;
+  }
+  .header-badge-item svg,
+  .header-badge-icon,
+  .header-badge-item img {
+    width: 13px;
+    height: 13px;
+  }
+
+  .landing-section {
+    padding: 80px 0;
+  }
+
+  /* --== Button Mobile Responsive ==-- */
+  .unify-btn-primary {
+    border-radius: 8px;
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: 2.4px;
+    padding: 16px 20px;
+    box-shadow: 0 10px 15px #0000001A;
+  }
+  .unify-btn-primary-md {
+    font-size: 14px;
+    line-height: 15px;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    padding: 16px 48px;
+  }
+
+  .unify-btn-yellow,
+  .landing-btn-paypal {
+    border-radius: 8px;
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: 2.4px;
+    padding: 16px 20px;
+    box-shadow: 0 10px 15px rgba(255, 196, 57, 0.2);
+  }
+
+  .landing-btn-paypal svg,
+  .landing-btn-paypal img {
+    height: 22px;
+  }
+
+  .unify-btn-outline,
+  .landing-btn-action {
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 1px;
+    padding: 8px 16px;
+    border-radius: 5px;
+  }
+}

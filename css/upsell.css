@@ -1,0 +1,954 @@
+
+
+/* Standalone Utility Classes */
+.d-flex { display: flex !important; }
+.align-items-center { align-items: center !important; }
+.justify-content-between { justify-content: space-between !important; }
+.justify-content-center { justify-content: center !important; }
+.text-center { text-align: center !important; }
+.text-alert-red { color: var(--color-error-highlight) !important; }
+
+/* ==========================================================================
+   04. SECTION 2: MAIN HERO & STEPPER INDICATOR
+   ========================================================================== */
+.upsell-main-area {
+  background-color: var(--bg-default);
+  width: 100%;
+}
+.upsell-stepper-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.stepper-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stepper-dot {
+  display: inline-block;
+  background-color: var(--bg-dark);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.stepper-bar {
+  display: inline-block;
+  background-color: #E9E8E7;
+  flex-shrink: 0;
+}
+.stepper-bar.active {
+  background-color: var(--bg-dark);
+}
+.stepper-dot-light {
+  background-color: var(--border-input);
+}
+/* ==========================================================================
+   05. SECTION 3: OFFER HEADLINE & SUBTITLE
+   ========================================================================== */
+.upsell-heading-area {
+  width: 100%;
+}
+.upsell-main-title {
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-top: 0;
+}
+.upsell-main-subtitle {
+  color: var(--text-secondary);
+  margin-left: auto;
+  margin-right: auto;
+}
+/* ==========================================================================
+   06. SECTION 4: MAIN OFFER CARD & IMAGE BOX
+   ========================================================================== */
+.upsell-card-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.upsell-offer-card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-default);
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+}
+.upsell-image-column {
+  box-sizing: border-box;
+}
+.upsell-image-box {
+  background-color: #ECEAEA;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+.upsell-placeholder-icon {
+  display: block;
+}
+.upsell-placeholder-text {
+  color: var(--text-light-gray);
+  font-weight: 500;
+  text-align: center;
+}
+/* ==========================================================================
+   07. SECTION 5: OFFER DETAILS & CONTENT
+   ========================================================================== */
+.upsell-content-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+.upsell-discount-badge {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+  width: fit-content;
+}
+.upsell-product-title {
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+}
+.upsell-product-title u {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.upsell-product-desc {
+  color: var(--text-secondary);
+  margin: 0;
+}
+.upsell-card-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-color);
+}
+/* ==========================================================================
+   08. SECTION 6: BENEFIT FEATURE BULLETS
+   ========================================================================== */
+.upsell-features-list {
+  display: flex;
+  flex-direction: column;
+}
+.upsell-feature-item {
+  display: flex;
+  align-items: center;
+}
+.feature-check-icon {
+  flex-shrink: 0;
+}
+.upsell-feature-item span {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+/* ==========================================================================
+   09. SECTION 7: ACTION CTAS & ENCRYPTION NOTE
+   ========================================================================== */
+.upsell-actions-area {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.btn-upsell-accept {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-weight: 800;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+.btn-upsell-accept:hover {
+  opacity: 0.92;
+}
+.btn-upsell-accept:active {
+  transform: scale(0.99);
+}
+.btn-upsell-decline {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-input);
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-decoration: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.btn-upsell-decline:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
+.upsell-encryption-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-default);
+  font-weight: 700;
+  text-transform: uppercase;
+  opacity: 50%;
+}
+.upsell-encryption-note img {
+  width: 16px;
+  height: auto;
+  display: block;
+  background-size: cover;
+}
+.encryption-lock-icon {
+  flex-shrink: 0;
+}
+/* ==========================================================================
+   10. SECTION 8: TRUST & QUALITY GUARANTEED
+   ========================================================================== */
+.upsell-trust-section {
+  width: 100%;
+}
+.trust-section-title {
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin: 0;
+}
+.trust-badges-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.trust-badge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  height: 100%;
+}
+.trust-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.trust-icon-box svg {
+  display: block;
+}
+.trust-badge-label {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+/* ==========================================================================
+   11. SECTION 9: MIDDLE TRUST BAR
+   ========================================================================== */
+.upsell-middle-trust-bar {
+  background-color: var(--bg-quaternary);
+  border-top: 1px solid var(--border-default);
+  border-bottom: 1px solid var(--border-default);
+  width: 100%;
+  border-bottom: none;
+  opacity: 80%;
+}
+.middle-trust-badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.middle-badge-item {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  color: var(--text-dark-gray);
+}
+.middle-badge-icon {
+  flex-shrink: 0;
+}
+/* ==========================================================================
+   12. SECTION 10: SITE FOOTER
+   ========================================================================== */
+.upsell-site-footer {
+  background-color: var(--bg-primary);
+  border-top: 1px solid var(--border-color);
+  width: 100%;
+}
+.footer-logo-title {
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+.footer-nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.footer-nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+.footer-nav-links a:hover {
+  color: var(--text-primary);
+}
+.footer-payments-heading {
+  font-weight: 600;
+  color: var(--text-light-gray);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.footer-payment-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.payment-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-legal-text {
+  color: var(--text-light-gray);
+  line-height: 1.5;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* ==========================================================================
+   13. RESPONSIVE: DESKTOP MEDIA QUERY (>= 1024px)
+   1280px Baseline Fluid `vw` Scaling: val_in_px / 1280 * 100vw
+   Strict Serial Sequence matching HTML content order
+   ========================================================================== */
+@media (min-width: 1024px) {
+  /* Section 2: Main Hero Area */
+  .upsell-main-area {
+    padding: 2.1875vw 0 3.7500vw 0; /* 28px 0 48px */
+  }
+  /* Stepper Indicator */
+  .upsell-stepper-container {
+    margin-bottom: 2.5000vw;
+  }
+  .stepper-track {
+    gap: 0.7813vw;
+  }
+  .stepper-dot {
+    width: 0.7813vw;
+    height: 0.7813vw;
+  }
+  .stepper-bar {
+    width: 3.7500vw;
+    height: 0.3125vw;
+  }
+  .stepper-track .stepper-dot:nth-child(3) {
+    box-shadow: 0 0 0 0.3125vw #E5E2E1;
+  }
+  /* ==== Section: Offer Headline & Subtitle ==== */
+  .upsell-main-title {
+    font-size: 3.7500vw;
+    line-height: 4.0625vw;
+    margin-bottom: 1.8750vw;
+    font-weight: 800;
+  }
+  .upsell-main-subtitle {
+    font-size: 1.4063vw;
+    line-height: 2.1094vw;
+    margin-bottom: 2.5000vw;
+  }
+  /* Section 4: Main Offer Card & Image Box */
+  .upsell-card-wrapper {
+    margin-bottom: 3.1250vw; /* 40px */
+  }
+  .upsell-offer-card {
+    border-radius: 0.6250vw;
+    padding: 3.7500vw;
+    gap: 3.9063vw;
+  }
+  .upsell-image-column {
+    flex: 0 0 32.8125vw;
+    width: 32.8125vw;
+    min-height: 50.9375vw;
+  }
+  .upsell-image-box {
+    border-radius: 0.4688vw; /* 6px */
+  }
+  .upsell-placeholder-icon {
+    width: 4.6875vw; /* 60px */
+    height: 4.6875vw;
+    margin-bottom: 1.0938vw; /* 14px */
+  }
+  .upsell-placeholder-text {
+    font-size: 1.0156vw; /* 13px */
+  }
+  /* Section 5: Offer Details & Content */
+  .upsell-content-column {
+    width: 44.6875vw;
+    padding-top: 3.7500vw;
+  }
+  .upsell-discount-badge {
+    font-size: 0.9375vw;
+    letter-spacing: 0.0781vw;
+    padding: 0.3125vw 0.9375vw;
+    border-radius: 0.3125vw;
+    margin-bottom: 1.5625vw;
+  }
+  .upsell-product-title {
+    font-size: 2.5000vw;
+    line-height: 2.9688vw;
+    margin-bottom: 1.5625vw;
+    font-weight: 700;
+  }
+  .upsell-product-desc,
+  .upsell-feature-item span {
+    font-size: 1.2500vw;
+    line-height: 1.9531vw;
+    font-weight: 400;
+  }
+  .upsell-card-divider {
+    margin: 1.2500vw 0;
+  }
+  .upsell-actions-area {
+    padding-top: 1.2500vw;
+  }
+  .unify-btn-outline {
+    padding: 1.2500vw 0;
+    font-size: 1.0938vw;
+    line-height: 1.2500vw;
+    text-transform: none;
+    width: 100%;
+    color: var(--text-secondary);
+  }
+  .upsell-actions-area {
+    gap: 1.2500vw;
+  }
+  /* Section 6: Benefit Feature Bullets */
+  .upsell-features-list {
+    gap: 0.7813vw; /* 10px */
+  }
+  .feature-check-icon,
+  .upsell-feature-item img {
+    display: block;
+    width: 1.2500vw; 
+    height: 1.2500vw;
+    background-size: cover;
+    margin-right: 0.9375vw;
+  }
+  /* Section 7: Action CTAs & Encryption Note */
+  .btn-upsell-accept {
+    height: 3.9063vw; /* 50px */
+    font-size: 1.1719vw; /* 15px */
+    letter-spacing: 0.0391vw;
+    border-radius: 0.4688vw; /* 6px */
+    margin-bottom: 0.9375vw; /* 12px */
+  }
+  .btn-upsell-decline {
+    height: 3.2813vw; /* 42px */
+    font-size: 1.0156vw; /* 13px */
+    border-radius: 0.4688vw; /* 6px */
+    margin-bottom: 1.2500vw; /* 16px */
+  }
+  .upsell-encryption-note {
+    font-size: 0.9375vw;
+    line-height: 1.2500vw;
+    letter-spacing: 0.0938vw;
+    gap: 0.9375vw;
+    padding-top: 1.2500vw;
+  }
+  .upsell-encryption-note svg {
+    width: 0.9375vw;
+    height: 1.3281vw;
+  }
+  .upsell-encryption-note img {
+    width: 1.2500vw;
+  }
+  
+  .encryption-lock-icon {
+    width: 0.9375vw; /* 12px */
+    height: 0.9375vw;
+  }
+  /* Section 8: Trust & Quality Badges */
+  .trust-section-title {
+    font-size: 1.0938vw;
+    line-height: 1.2500vw;
+    margin-bottom: 1.8750vw;
+    text-transform: uppercase;
+  }
+  .trust-badges-grid {
+    gap: 5.0000vw;
+  }
+  .trust-icon-box {
+    margin-bottom: 0.6250vw;
+  }
+  .trust-icon-box svg,
+  .trust-icon-box img {
+    display: block;
+    width: auto;
+    height: 2.5000vw;
+    background-size: cover;
+  }
+  .trust-badge-label {
+    font-size: 0.9375vw;
+    line-height: 1.2500vw;
+    font-weight: 500;
+  }
+  /* Section 9: Middle Trust Bar */
+  .upsell-middle-trust-bar {
+    padding: 1.2500vw 0;
+  }
+  .middle-trust-badges {
+    gap: 2.1875vw; /* 28px */
+  }
+  .middle-badge-item {
+    font-size: 1.0938vw;
+    line-height: 1.2500vw;
+    gap: 0.9375vw;
+    align-items: end;
+    color: var(--text-secondary);
+    font-weight: 700;
+  }
+  .middle-badge-item svg,
+  .middle-badge-item img {
+    display: block;
+    width: 1.2500vw;
+    height: auto;
+    background-size: cover;
+  }
+  .middle-badge-icon {
+    width: 1.0938vw; /* 14px */
+    height: 1.0938vw;
+  }
+  /* Section 10: Site Footer */
+  .upsell-site-footer {
+    padding: 3.7500vw 0 2.8125vw 0; /* 48px 0 36px */
+  }
+  .footer-logo-title {
+    font-size: 1.4063vw; /* 18px */
+    margin-bottom: 1.2500vw; /* 16px */
+  }
+  .footer-nav-links {
+    gap: 1.5625vw; /* 20px */
+    margin-bottom: 1.8750vw; /* 24px */
+  }
+  .footer-nav-links a {
+    font-size: 0.9375vw; /* 12px */
+  }
+  .footer-payments-heading {
+    font-size: 0.7813vw; /* 10px */
+    margin-bottom: 0.9375vw; /* 12px */
+  }
+  .footer-payment-icons {
+    gap: 1.4063vw; /* 18px */
+    margin-bottom: 1.8750vw; /* 24px */
+  }
+  .payment-badge svg {
+    width: 2.9688vw; /* 38px */
+    height: 1.8750vw; /* 24px */
+  }
+  .footer-legal-text {
+    font-size: 0.7813vw; /* 10px */
+    max-width: 53.1250vw; /* 680px */
+  }
+}
+/* ==========================================================================
+   14. RESPONSIVE: TABLET MEDIA QUERY (768px to 1023.98px)
+   Clean `px` parameters in exact serial order
+   ========================================================================== */
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  /* Global Container on Tablet */
+  .landing-container {
+    width: 92% !important;
+    max-width: 720px !important;
+    padding: 0 15px !important;
+  }
+  /* Section 2: Main Hero Area */
+  .upsell-main-area {
+    padding: 28px 0 40px 0;
+  }
+  /* Stepper */
+  .upsell-stepper-container {
+    margin-bottom: 16px;
+  }
+  .stepper-track {
+    gap: 8px;
+  }
+  .stepper-dot {
+    width: 10px;
+    height: 10px;
+  }
+  .stepper-bar {
+    width: 48px;
+    height: 4px;
+  }
+  /* Section 3: Offer Headline & Subtitle */
+  .upsell-main-title {
+    font-size: 28px;
+    line-height: 34px;
+    margin-bottom: 10px;
+  }
+  .upsell-main-subtitle {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 28px;
+  }
+  /* Section 4: Main Offer Card & Image Box */
+  .upsell-card-wrapper {
+    margin-bottom: 32px;
+  }
+  .upsell-offer-card {
+    border-radius: 8px;
+    padding: 24px;
+    gap: 24px;
+  }
+  .upsell-image-column {
+    flex: 0 0 45%;
+    width: 45%;
+  }
+  .upsell-image-box {
+    border-radius: 6px;
+    height: 360px;
+  }
+  .upsell-placeholder-icon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 12px;
+  }
+  .upsell-placeholder-text {
+    font-size: 13px;
+  }
+  /* Section 5: Offer Details & Content */
+  .upsell-content-column {
+    flex: 0 0 50%;
+    width: 50%;
+  }
+  .upsell-discount-badge {
+    font-size: 10px;
+    padding: 4px 8px;
+    border-radius: 3px;
+    margin-bottom: 12px;
+  }
+  .upsell-product-title {
+    font-size: 22px;
+    line-height: 28px;
+    margin-bottom: 10px;
+  }
+  .upsell-product-desc {
+    font-size: 13px;
+    line-height: 18px;
+  }
+  .upsell-card-divider {
+    margin: 14px 0;
+  }
+  /* Section 6: Benefit Feature Bullets */
+  .upsell-features-list {
+    gap: 8px;
+  }
+  .feature-check-icon,
+  .upsell-feature-item img  {
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
+  }
+  .upsell-feature-item span {
+    font-size: 13px;
+  }
+  /* Section 7: Action CTAs & Encryption Note */
+  .btn-upsell-accept {
+    height: 48px;
+    font-size: 14px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+  .btn-upsell-decline {
+    height: 40px;
+    font-size: 13px;
+    border-radius: 6px;
+    margin-bottom: 14px;
+  }
+  .upsell-encryption-note {
+    font-size: 10px;
+    gap: 6px;
+  }
+  .encryption-lock-icon {
+    width: 12px;
+    height: 12px;
+  }
+  /* Section 8: Trust & Quality Badges */
+  .upsell-trust-section {
+    padding-bottom: 20px;
+  }
+  .trust-section-title {
+    font-size: 11px;
+    margin-bottom: 20px;
+  }
+  .trust-badges-grid {
+    gap: 36px;
+  }
+  .trust-icon-box {
+    margin-bottom: 8px;
+  }
+  .trust-icon-box svg,
+  .trust-icon-box img {
+    display: block;
+    width: auto;
+    height: 32px;
+    background-size: cover;
+  }
+  .trust-badge-label {
+    font-size: 11px;
+  }
+  /* Section 9: Middle Trust Bar */
+  .upsell-middle-trust-bar {
+    padding: 12px 0;
+  }
+  .middle-trust-badges {
+    gap: 24px;
+  }
+  .middle-badge-item {
+    font-size: 12px;
+    gap: 6px;
+  }
+  .middle-badge-item img {
+    display: block;
+    width: 16px;
+    height: auto;
+    background-size: cover;
+  }
+  .middle-badge-icon {
+    width: 14px;
+    height: 14px;
+  }
+  /* Section 10: Site Footer */
+  .upsell-site-footer {
+    padding: 40px 0 30px 0;
+  }
+  .footer-logo-title {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+  .footer-nav-links {
+    gap: 18px;
+    margin-bottom: 20px;
+  }
+  .footer-nav-links a {
+    font-size: 12px;
+  }
+  .footer-payments-heading {
+    font-size: 10px;
+    margin-bottom: 12px;
+  }
+  .footer-payment-icons {
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .footer-legal-text {
+    font-size: 10px;
+    max-width: 600px;
+  }
+}
+/* ==========================================================================
+   15. RESPONSIVE: MOBILE MEDIA QUERY (<= 767.98px / <= 677px)
+   Exact pixel-perfect fidelity matching mobile mockup
+   Strict Serial Sequence matching HTML content order
+   ========================================================================== */
+@media (max-width: 767.98px) {
+  /* Global Container Baseline (Strictly Requested by User) */
+  .landing-container,
+  .container-unify {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    overflow: hidden;
+    --bs-gutter-x: 0;
+  }
+  /* Section 2: Main Hero Area */
+  .upsell-section {
+    padding: 40px 0;
+  }
+  .upsell-main-area {
+    padding: 20px 0 32px 0;
+  }
+  /* Stepper Indicator */
+  .upsell-stepper-container {
+    padding-top: 4px;
+    margin-bottom: 32px;
+  }
+  .stepper-track {
+    gap: 6px;
+  }
+  .stepper-dot {
+    width: 10px;
+    height: 10px;
+  }
+  .stepper-track .stepper-dot:nth-child(3) {
+    box-shadow: 0 0 0 4px #E5E2E1;
+  }
+  .stepper-bar {
+    width: 48px;
+    height: 4px;
+  }
+  /* Section 3: Offer Headline & Subtitle */
+  .upsell-main-title {
+    font-size: 32px;
+    line-height: 38px;
+    margin-bottom: 24px;
+  }
+  .upsell-main-subtitle {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 32px;
+  }
+  /* Section 4: Main Offer Card (Vertical Single-Column Stack) */
+  .upsell-card-wrapper {
+    margin-bottom: 24px;
+  }
+  .upsell-offer-card {
+    flex-direction: column;
+    border-radius: 8px;
+    padding: 20px;
+    gap: 24px;
+  }
+  .upsell-image-column {
+    width: 100%;
+  }
+  .upsell-image-box {
+    border-radius: 8px;
+    height: 308px;
+  }
+  .upsell-placeholder-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 10px;
+  }
+  .upsell-placeholder-text {
+    font-size: 12px;
+  }
+  /* Section 5: Offer Details & Content */
+  .upsell-content-column {
+    width: 100%;
+  }
+  .upsell-discount-badge {
+    font-size: 12px;
+    line-height: 16px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  .upsell-product-title {
+    font-size: 32px;
+    line-height: 38px;
+    margin-bottom: 20px;
+  }
+  .upsell-product-desc,
+  .upsell-feature-item span {
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 400;
+  }
+  .upsell-card-divider {
+    margin: 12px 0;
+  }
+  /* Section 6: Benefit Feature Bullets */
+  .upsell-features-list {
+    gap: 8px;
+  }
+  .feature-check-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+  }
+  /* Section 7: Action CTAs & Encryption Note */
+  .btn-upsell-accept {
+    height: 46px;
+    font-size: 14px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  .btn-upsell-decline {
+    height: 38px;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+  .upsell-actions-area .unify-btn-outline {
+    width: 100%;
+     margin-top: 16px;
+     font-size: 14px;
+     line-height: 16px;
+     padding: 16px 10px;
+  }
+  .upsell-encryption-note {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 1.2px;
+    gap: 12px;
+    font-weight: 700;
+    padding-top: 26px;
+  }
+  .encryption-lock-icon {
+    width: 11px;
+    height: 11px;
+  }
+  /* Section 8: Trust & Quality Badges (3 in Row 1, 1 Centered Underneath) */
+  .upsell-trust-section {
+    padding-top: 64px;
+    padding-bottom: 40px;
+  }
+  .trust-section-title {
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0;
+    margin-bottom: 24px;
+  }
+  .trust-badges-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .trust-badge-item:nth-child(4) {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+  .trust-icon-box {
+    margin-bottom: 6px;
+  }
+  .trust-icon-box img {
+    display: block;
+    width: auto;
+    height: 32px;
+    background-size: cover;
+  }
+  .trust-badge-label {
+    font-size: 10px;
+  }
+  /* Section 9: Middle Trust Bar */
+  .upsell-middle-trust-bar {
+    padding: 10px 0;
+  }
+  .middle-trust-badges {
+    gap: 32px;
+  }
+  .middle-badge-item {
+    font-size: 14px;
+    line-height: 16px;
+    gap: 12px;
+  }
+  .middle-badge-item img {
+    display: block;
+    width: 16px;
+    height: auto;
+    background-size: cover;
+  }
+  .middle-badge-icon {
+    width: 13px;
+    height: 13px;
+  }
+}

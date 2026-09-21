@@ -1,0 +1,412 @@
+
+
+/* --------------------------------------------------------------------------
+   BODY SCROLL LOCKING & ANTI-LAYOUT-SHIFT
+   -------------------------------------------------------------------------- */
+body.unify-modal-open {
+  overflow: hidden !important;
+  padding-right: var(--modal-scrollbar-width, 0px);
+}
+
+/* --------------------------------------------------------------------------
+   BACKDROP / OVERLAY (BASE ARCHITECTURE)
+   -------------------------------------------------------------------------- */
+.unify-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+
+  /* Smooth GPU-accelerated transition states */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, visibility;
+}
+
+/* Active Open State for Backdrop */
+.unify-modal-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* --------------------------------------------------------------------------
+   MODAL DIALOG / CONTAINER (BASE ARCHITECTURE)
+   -------------------------------------------------------------------------- */
+.unify-modal-dialog {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  /* Smooth GPU-accelerated scaling and entrance */
+  transform: scale(0.95) translateY(-8px);
+  opacity: 0;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.unify-modal-backdrop.is-open .unify-modal-dialog {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   MODAL CARD / CONTENT (BASE ARCHITECTURE USING ROOT VARS)
+   -------------------------------------------------------------------------- */
+.unify-modal-content {
+  background-color: var(--bg-primary, #ffffff);
+  border-radius: 8px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15),
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 24px 28px;
+  position: relative;
+  border: 1px solid var(--border-color, #e5e5e5);
+  font-family: var(--font-main, "Inter", sans-serif);
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   MODAL HEADER (TITLE & CLOSE BUTTON)
+   -------------------------------------------------------------------------- */
+.unify-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.unify-modal-title {
+  font-family: var(--font-main, "Inter", sans-serif);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-primary, #111111);
+  margin: 0;
+  padding: 0;
+  letter-spacing: -0.01em;
+}
+
+.unify-modal-close {
+  background: transparent;
+  border: none;
+  padding: 6px;
+  margin: -6px -6px 0 0;
+  cursor: pointer;
+  color: var(--text-light-gray, #a1a1aa);
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.18s ease, background-color 0.18s ease;
+  line-height: 1;
+}
+
+.unify-modal-close:hover {
+  color: var(--text-primary, #111111);
+  background-color: var(--bg-quaternary, #F5F3F3);
+}
+
+.unify-modal-close:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.unify-modal-close svg {
+  display: block;
+  width: 14px;
+  height: 14px;
+}
+
+/* --------------------------------------------------------------------------
+   MODAL BODY (TEXT & ERROR BADGE)
+   -------------------------------------------------------------------------- */
+.unify-modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.unify-modal-message {
+  font-family: var(--font-main, "Inter", sans-serif);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--text-secondary, #444748);
+  margin: 0 0 18px 0;
+}
+
+.unify-modal-link {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s ease, text-decoration 0.15s ease;
+}
+
+.unify-modal-link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.unify-modal-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-quaternary, #F5F3F3);
+  border: 1px solid var(--border-color, #e5e5e5);
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary, #444748);
+  letter-spacing: 0.02em;
+  user-select: text;
+}
+
+/* --------------------------------------------------------------------------
+   DEMO RE-OPEN TRIGGER (FLOATING HELPER)
+   -------------------------------------------------------------------------- */
+.unify-modal-demo-trigger {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--bg-dark, #000000);
+  color: var(--text-light, #ffffff);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 18px;
+  border-radius: 9999px;
+  font-family: var(--font-main, "Inter", sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.unify-modal-demo-trigger:hover {
+  background: #27272a;
+  transform: translateY(-2px);
+}
+
+.unify-modal-demo-trigger svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ==========================================================================
+   DESKTOP MEDIA QUERY (>= 1024px)
+   1280px Artboard Fluid `vw` Scaling (Formula: px / 1280 * 100vw)
+   ========================================================================== */
+@media (min-width: 1024px) {
+  .unify-modal-dialog {
+    max-width: 45.6250vw;
+  }
+  .unify-modal-content {
+    border-radius: 0.6250vw;
+    padding: 2.5000vw
+  }
+  .unify-modal-header {
+    gap: 1.2500vw; 
+    margin-bottom: 1.8750vw;
+  }
+  .unify-modal-title {
+    font-size: 1.5625vw;
+    line-height: 1.5625vw;
+    font-weight: 700;
+  }
+  .unify-modal-close {
+    padding: 0.4688vw; /* 6px */
+    margin: -0.4688vw -0.4688vw 0 0;
+    border-radius: 0.4688vw; /* 6px */
+  }
+  .unify-modal-close svg {
+    width:  1.2500vw;
+    height: 1.2500vw;
+  }
+  .unify-modal-message {
+    font-size: 1.2500vw;
+    line-height: 1.8750vw;
+    margin-bottom: 2.5000vw;
+  }
+  .unify-modal-badge {
+    padding: 0.4688vw 0.9375vw;
+    border-radius: 0.3906vw;
+    font-size: 1.2500vw;
+    line-height: 1.8750vw;
+    font-weight: 400;
+  }
+
+  .unify-modal-demo-trigger {
+    bottom: 1.8750vw; /* 24px */
+    right: 1.8750vw; /* 24px */
+    padding: 0.7813vw 1.4063vw; /* 10px 18px */
+    border-radius: 78.1250vw;
+    font-size: 1.0156vw; /* 13px */
+    gap: 0.6250vw; /* 8px */
+  }
+
+  .unify-modal-demo-trigger svg {
+    width: 1.0938vw; /* 14px */
+    height: 1.0938vw; /* 14px */
+  }
+}
+
+/* ==========================================================================
+   TABLET MEDIA QUERY (678px to 1023.98px)
+   Standard PX Parameters
+   ========================================================================== */
+@media (min-width: 678px) and (max-width: 1023.98px) {
+  .unify-modal-dialog {
+    width: 90%;
+    max-width: 480px;
+  }
+
+  .unify-modal-content {
+    border-radius: 8px;
+    padding: 24px 28px;
+  }
+
+  .unify-modal-header {
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+
+  .unify-modal-title {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+
+  .unify-modal-close {
+    padding: 6px;
+    margin: -6px -6px 0 0;
+    border-radius: 6px;
+  }
+
+  .unify-modal-close svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .unify-modal-message {
+    font-size: 14px;
+    line-height: 1.55;
+    margin-bottom: 18px;
+  }
+
+  .unify-modal-badge {
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+
+  .unify-modal-demo-trigger {
+    bottom: 24px;
+    right: 24px;
+    padding: 10px 18px;
+    font-size: 13px;
+    gap: 8px;
+  }
+
+  .unify-modal-demo-trigger svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* ==========================================================================
+   MOBILE MEDIA QUERY (<= 677.98px)
+   Exact Mobile Fidelity PX Parameters
+   ========================================================================== */
+@media (max-width: 677.98px) {
+  .unify-modal-backdrop {
+    padding: 16px;
+  }
+
+  .unify-modal-dialog {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .unify-modal-content {
+    border-radius: 8px;
+    padding: 20px 20px;
+  }
+
+  .unify-modal-header {
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .unify-modal-title {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  .unify-modal-close {
+    padding: 6px;
+    margin: -6px -6px 0 0;
+    border-radius: 6px;
+  }
+
+  .unify-modal-close svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .unify-modal-message {
+    font-size: 13.5px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  .unify-modal-badge {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 11.5px;
+  }
+
+  .unify-modal-demo-trigger {
+    bottom: 16px;
+    right: 16px;
+    padding: 8px 14px;
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  .unify-modal-demo-trigger svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY - REDUCED MOTION PREFERENCE
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .unify-modal-backdrop,
+  .unify-modal-dialog,
+  .unify-modal-close,
+  .unify-modal-demo-trigger {
+    transition: none !important;
+    transform: none !important;
+  }
+}
